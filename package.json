@@ -1,6 +1,6 @@
 {
   "name": "social-floating-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component for floating social media icons with customizable configuration. Perfect for portfolios, websites, and React/Next.js projects. Features hover effects, animations, and JSON-based configuration.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
