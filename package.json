@@ -26,7 +26,7 @@
     "typescript",
     "tailwind"
   ],
-  "author": "Your Name",
+  "author": "Kundan",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -51,10 +51,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/floating-icons.git"
+    "url": "https://github.com/its-kundan/floating-social-icons.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/floating-icons/issues"
+    "url": "https://github.com/its-kundan/floating-social-icons/issues"
   },
-  "homepage": "https://github.com/yourusername/floating-icons#readme"
+  "homepage": "https://github.com/its-kundan/floating-social-icons#readme"
 }
