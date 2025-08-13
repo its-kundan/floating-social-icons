@@ -13,6 +13,22 @@ This package is published and available on the npm registry:
 - **Version**: 1.0.0
 - **Downloads**: Available for installation via npm/yarn
 
+## 📸 Demo
+
+Here's how the floating social media icons look in a real portfolio website:
+
+![Social Floating Icons Demo](demo-screenshot.png)
+
+*Floating social media icons (Twitter, GitHub, LinkedIn, Telegram, YouTube) positioned on the right side of a portfolio website*
+
+> **Note**: The demo shows floating social media icons integrated into a portfolio website with a dark theme, featuring smooth hover effects and professional styling.
+
+### 🖼️ Demo Image Setup
+To add your own demo screenshot:
+1. Take a screenshot of your website with the floating icons
+2. Save it as `demo-screenshot.png` in the root directory
+3. The image will automatically appear in the README
+
 ## Features
 
 - 🎯 **Easy to use** - Simple React component with minimal setup
