@@ -1,0 +1,44 @@
+{
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "link": "https://github.com/its-kundan",
+      "icon": "FaGithub",
+      "color": "text-gray-800 hover:text-gray-600",
+      "want": true,
+      "size": 30
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://linkedin.com/in/yourusername",
+      "icon": "FaLinkedin",
+      "color": "text-blue-600 hover:text-blue-500",
+      "want": true,
+      "size": 30
+    },
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/yourusername",
+      "icon": "FaTwitter",
+      "color": "text-blue-400 hover:text-blue-300",
+      "want": true,
+      "size": 30
+    },
+    {
+      "name": "Instagram",
+      "link": "https://instagram.com/yourusername",
+      "icon": "FaInstagram",
+      "color": "text-pink-600 hover:text-pink-500",
+      "want": false,
+      "size": 30
+    },
+    {
+      "name": "YouTube",
+      "link": "https://youtube.com/@yourusername",
+      "icon": "FaYoutube",
+      "color": "text-red-600 hover:text-red-500",
+      "want": true,
+      "size": 30
+    }
+  ]
+}
