@@ -1,6 +1,17 @@
 # Social Floating Icons
 
+[![npm version](https://img.shields.io/npm/v/social-floating-icons.svg)](https://www.npmjs.com/package/social-floating-icons)
+[![npm downloads](https://img.shields.io/npm/dm/social-floating-icons.svg)](https://www.npmjs.com/package/social-floating-icons)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A React component for displaying floating social media icons with customizable configuration.
+
+## 🚀 Published on npm
+
+This package is published and available on the npm registry:
+- **Package**: [social-floating-icons](https://www.npmjs.com/package/social-floating-icons)
+- **Version**: 1.0.0
+- **Downloads**: Available for installation via npm/yarn
 
 ## Features
 
@@ -12,13 +23,17 @@ A React component for displaying floating social media icons with customizable c
 - 🔧 **TypeScript support** - Full type definitions included
 - 📦 **Framework agnostic** - Works with React, Next.js, and other frameworks
 
-## Installation
+## 📦 Installation
 
 ```bash
 npm install social-floating-icons
 # or
 yarn add social-floating-icons
 ```
+
+> **✅ Package is published and available on npm!** 
+> 
+> You can view it at: https://www.npmjs.com/package/social-floating-icons
 
 ## Quick Start
 
