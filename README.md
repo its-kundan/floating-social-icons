@@ -93,17 +93,21 @@ yarn add social-floating-icons
 > 
 > You can view it at: https://www.npmjs.com/package/social-floating-icons
 
-### 🎉 Automatic Setup
+### 🎉 Manual Setup
 
-After installation, the package will automatically:
-- ✅ Create a `social-links.json` file in your project root
-- ✅ Set up default social media links configuration
-- ✅ Display helpful setup instructions
+After installation, you need to create a `social-links.json` file in your project root. You can:
 
-If the file isn't created automatically, you can create it manually or run:
+1. **Copy the example file** from the package:
 ```bash
-npm run postinstall
+cp node_modules/social-floating-icons/social-links.json ./social-links.json
 ```
+
+2. **Or run the setup script** (if you have the package source):
+```bash
+npm run setup
+```
+
+3. **Or create it manually** using the configuration example below
 
 ## Quick Start
 
@@ -121,7 +125,7 @@ function App() {
 
 ## Configuration
 
-The package automatically creates a `social-links.json` file in your project root during installation. You can customize this file with your social media links:
+You need to create a `social-links.json` file in your project root. You can customize this file with your social media links:
 
 ```json
 {
@@ -320,11 +324,11 @@ npm audit fix
 ```
 
 ### **Q: The social-links.json file wasn't created automatically. What should I do?**
-You can manually create the file or run:
+You can copy the example file from the package:
 ```bash
-npm run postinstall
+cp node_modules/social-floating-icons/social-links.json ./social-links.json
 ```
-Or copy the example from the `example/social-links.json` file in the package.
+Or create it manually using the configuration example in the README.
 
 ### **Q: Can I use this with Next.js?**
 Yes! This package works perfectly with Next.js, React, and any React-based framework.
