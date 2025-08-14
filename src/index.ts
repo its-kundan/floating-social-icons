@@ -18,4 +18,5 @@ export {
 } from './config';
 
 // Default export
+import { FloatingIcons } from './FloatingIcons';
 export default FloatingIcons;

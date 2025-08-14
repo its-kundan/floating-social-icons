@@ -93,6 +93,18 @@ yarn add social-floating-icons
 > 
 > You can view it at: https://www.npmjs.com/package/social-floating-icons
 
+### 🎉 Automatic Setup
+
+After installation, the package will automatically:
+- ✅ Create a `social-links.json` file in your project root
+- ✅ Set up default social media links configuration
+- ✅ Display helpful setup instructions
+
+If the file isn't created automatically, you can create it manually or run:
+```bash
+npm run postinstall
+```
+
 ## Quick Start
 
 ```jsx
@@ -109,7 +121,7 @@ function App() {
 
 ## Configuration
 
-Create a JSON file (e.g., `social-links.json`) with your social media links:
+The package automatically creates a `social-links.json` file in your project root during installation. You can customize this file with your social media links:
 
 ```json
 {
@@ -300,6 +312,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```bash
 npm install social-floating-icons
 ```
+
+### **Q: I see funding requests and vulnerabilities after installation. Is this normal?**
+The funding requests are just informational messages from dependencies asking for support - they don't affect functionality. If you see vulnerabilities, run:
+```bash
+npm audit fix
+```
+
+### **Q: The social-links.json file wasn't created automatically. What should I do?**
+You can manually create the file or run:
+```bash
+npm run postinstall
+```
+Or copy the example from the `example/social-links.json` file in the package.
 
 ### **Q: Can I use this with Next.js?**
 Yes! This package works perfectly with Next.js, React, and any React-based framework.
