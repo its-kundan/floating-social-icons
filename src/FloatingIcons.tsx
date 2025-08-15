@@ -18,6 +18,22 @@ export const FloatingIcons: React.FC<FloatingIconsProps> = ({
   zIndex = 1000
 }) => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  // Error handling for invalid config
+  useEffect(() => {
+    if (!config || !config.socialLinks) {
+      setError('Invalid configuration: socialLinks is required');
+      return;
+    }
+    
+    if (!Array.isArray(config.socialLinks)) {
+      setError('Invalid configuration: socialLinks must be an array');
+      return;
+    }
+    
+    setError(null);
+  }, [config]);
 
   // Combine all icon libraries
   const iconMapping: IconMapping = {
@@ -65,23 +81,53 @@ export const FloatingIcons: React.FC<FloatingIconsProps> = ({
   };
 
   const handleIconClick = (link: string) => {
-    window.open(link, '_blank', 'noopener,noreferrer');
+    if (!link || typeof link !== 'string') {
+      console.warn('Invalid link provided to handleIconClick');
+      return;
+    }
+    
+    try {
+      // Validate URL
+      new URL(link);
+      window.open(link, '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Invalid URL provided:', link);
+    }
   };
 
   const getIconComponent = (iconName: string) => {
+    if (!iconName || typeof iconName !== 'string') {
+      console.warn(`Invalid icon name: ${iconName}`);
+      return null;
+    }
+    
     const IconComponent = iconMapping[iconName as keyof IconMapping];
     if (!IconComponent) {
-      console.warn(`Icon "${iconName}" not found in react-icons`);
+      console.warn(`Icon "${iconName}" not found in react-icons. Available icons: ${Object.keys(iconMapping).slice(0, 10).join(', ')}...`);
       return null;
     }
     return IconComponent;
   };
 
+  // Show error message if there's an error
+  if (error) {
+    console.error('FloatingIcons Error:', error);
+    return null; // Don't render anything if there's an error
+  }
+
+  // Don't render if no visible links
+  if (visibleLinks.length === 0) {
+    return null;
+  }
+
   return (
     <div className={`floating-icons-container ${className}`} style={containerStyle}>
       {visibleLinks.map((link: SocialLink, index: number) => {
         const IconComponent = getIconComponent(link.icon);
-        if (!IconComponent) return null;
+        if (!IconComponent) {
+          console.warn(`Icon "${link.icon}" not found for ${link.name}`);
+          return null;
+        }
 
         return (
           <div

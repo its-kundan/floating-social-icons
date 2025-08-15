@@ -1,6 +1,6 @@
 {
   "name": "social-floating-icons",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A React component for floating social media icons with customizable configuration. Perfect for portfolios, websites, and React/Next.js projects. Features hover effects, animations, and JSON-based configuration.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -9,7 +9,8 @@
     "dist",
     "README.md",
     "LICENSE",
-    "social-links.json"
+    "social-links.json",
+    "scripts"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -17,6 +18,7 @@
     "clean": "rimraf dist",
     "prepublishOnly": "npm run clean && npm run build",
     "setup": "node scripts/setup.js",
+    "postinstall": "node scripts/generate-config.js || echo 'Config generation skipped - you can run npm run setup manually'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

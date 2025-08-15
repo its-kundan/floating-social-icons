@@ -89,6 +89,14 @@ npm install social-floating-icons
 yarn add social-floating-icons
 ```
 
+### Peer Dependencies
+
+This package requires the following peer dependencies:
+- `react` >= 16.8.0
+- `react-dom` >= 16.8.0
+
+Make sure you have these installed in your project. If you're using a newer version of React, that's perfectly fine!
+
 > **✅ Package is published and available on npm!** 
 > 
 > You can view it at: https://www.npmjs.com/package/social-floating-icons
@@ -97,17 +105,19 @@ yarn add social-floating-icons
 
 After installation, you need to create a `social-links.json` file in your project root. You can:
 
-1. **Copy the example file** from the package:
-```bash
-cp node_modules/social-floating-icons/social-links.json ./social-links.json
-```
-
-2. **Or run the setup script** (if you have the package source):
+1. **Automatic setup** (recommended): The package will automatically try to create the config file during installation. If it fails, you can run:
 ```bash
 npm run setup
 ```
 
+2. **Copy the example file** from the package:
+```bash
+cp node_modules/social-floating-icons/social-links.json ./social-links.json
+```
+
 3. **Or create it manually** using the configuration example below
+
+> **Note**: If you see a message "Config generation skipped" during installation, this is normal and you can run the setup manually.
 
 ## Quick Start
 
@@ -122,6 +132,27 @@ function App() {
     </div>
   );
 }
+```
+
+## Next.js 13+ (App Router) Usage
+
+When using with Next.js 13+ App Router, you need to add the "use client" directive since this component uses React hooks:
+
+```jsx
+"use client";
+import { FloatingIcons } from 'social-floating-icons';
+
+export default function MyPage() {
+  return (
+    <div>
+      <h1>My Website</h1>
+      <FloatingIcons />
+    </div>
+  );
+}
+```
+
+**Important**: The `"use client"` directive is required because the component uses React hooks (`useState`, `useEffect`). Without it, you'll get the error: `useState only works in Client Components`.
 
 ## Configuration
 
@@ -151,6 +182,22 @@ You need to create a `social-links.json` file in your project root. You can cust
       "link": "https://twitter.com/yourusername",
       "icon": "FaTwitter",
       "color": "text-blue-400 hover:text-blue-300",
+      "want": true,
+      "size": 30
+    },
+    {
+      "name": "Instagram",
+      "link": "https://instagram.com/yourusername",
+      "icon": "FaInstagram",
+      "color": "text-pink-600 hover:text-pink-500",
+      "want": true,
+      "size": 30
+    },
+    {
+      "name": "YouTube",
+      "link": "https://youtube.com/@yourusername",
+      "icon": "FaYoutube",
+      "color": "text-red-600 hover:text-red-500",
       "want": false,
       "size": 30
     }
@@ -306,6 +353,20 @@ npm run clean
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 📋 Changelog
+
+### v1.0.4 (Latest)
+- ✅ Fixed Next.js 13+ App Router compatibility issues
+- ✅ Added comprehensive error handling and validation
+- ✅ Improved installation process with safe postinstall script
+- ✅ Enhanced documentation with troubleshooting guide
+- ✅ Added better TypeScript declarations
+- ✅ Fixed package structure and entry points
+- ✅ Added peer dependencies documentation
+
+### v1.0.3
+- Initial release with basic functionality
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -316,6 +377,46 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```bash
 npm install social-floating-icons
 ```
+
+## 🔧 Troubleshooting
+
+### **Next.js 13+ App Router Issues**
+
+**Error**: `useState only works in Client Components`
+
+**Solution**: Add `"use client"` directive at the top of your component file:
+
+```jsx
+"use client";
+import { FloatingIcons } from 'social-floating-icons';
+```
+
+### **Installation Issues**
+
+**Error**: `Cannot find module 'scripts/generate-config.js'`
+
+**Solution**: This error should not occur with the current version. If you encounter this, try:
+1. Clear your npm cache: `npm cache clean --force`
+2. Delete node_modules and package-lock.json
+3. Reinstall: `npm install`
+
+### **Configuration Issues**
+
+**Error**: Social icons not showing up
+
+**Solution**: 
+1. Ensure your `social-links.json` file exists in the project root
+2. Check that the `want` property is set to `true` for icons you want to display
+3. Verify that icon names match exactly with react-icons names (e.g., `FaGithub`, `FaLinkedin`)
+
+### **Styling Issues**
+
+**Problem**: Icons not styled correctly
+
+**Solution**:
+1. Ensure Tailwind CSS is properly configured in your project
+2. Check that the `color` property in your config uses valid Tailwind classes
+3. You can also use custom CSS classes instead of Tailwind
 
 ### **Q: I see funding requests and vulnerabilities after installation. Is this normal?**
 The funding requests are just informational messages from dependencies asking for support - they don't affect functionality. If you see vulnerabilities, run:
